@@ -435,15 +435,10 @@ if(window.location.hash){history.replaceState(null,'',window.location.pathname+w
   }
 
   for(var i=0;i<COUNT;i++){ createSwayPetal(i); }
+setTimeout(function () {
+    canvas.innerHTML = "";
+}, 4000);
 
-  // Gently add more on scroll so petals feel continuous
-  var extra = false;
-  window.addEventListener('scroll',function(){
-    if(!extra && window.scrollY > 200){
-      extra = true;
-      for(var j=COUNT;j<COUNT+8;j++){ createSwayPetal(j); }
-    }
-  },{passive:true});
 })();
 
 /* ── Countdown ── */
